@@ -1,0 +1,30 @@
+<template> <!--All views contained in a template tag-->
+  <section>
+    <h2>${heading}</h2>
+    <form submit.trigger="submit()">
+      <div>
+        <label>First Name</label>
+        <input type="text" value.two-way="firstName"><!--Two Way-->
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input type="text" value.bind="lastName"> <!--One Way-->
+      </div>
+      <div>
+        <label>Full Name</label>
+        <p>${fullName}</p>
+      </div>
+      <div>
+        <label>Username to Search</label>
+        <input type="text" value.two-way='userSearch'> <!--two Way-->
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <p>
+      <div show.bind="user" class="avatar">
+        <img src.bind="user.avatar_url" crossorigin />
+      </div>
+      <h4 show.bind="user">username: ${user.login}  <a target="_blank" href.bind="user.url" show.bind="user"><button class="btn btn-primary">Connect</button></a></h4>
+    </p>
+  </section>
+</template>
